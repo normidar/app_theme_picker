@@ -6,11 +6,11 @@ part 'theme_mode_pod.g.dart';
 
 @Riverpod(keepAlive: true)
 class ThemeModePod extends _$ThemeModePod {
-  final key = 'app_theme_picker:theme_mode';
+  final _key = 'app_theme_picker:theme_mode';
 
   @override
   Future<ThemeMode> build() async {
-    final themeMode = await ref.read(PrefsStringPodProvider(key).future);
+    final themeMode = await ref.read(prefsStringPodProvider(_key).future);
     if (themeMode != null) {
       return ThemeMode.values.firstWhere(
         (element) => element.name == themeMode,
@@ -21,7 +21,7 @@ class ThemeModePod extends _$ThemeModePod {
 
   Future<void> changeThemeMode(ThemeMode themeMode) async {
     await ref
-        .read(PrefsStringPodProvider(key).notifier)
+        .read(prefsStringPodProvider(_key).notifier)
         .setValue(themeMode.name);
     state = AsyncData(themeMode);
   }

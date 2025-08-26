@@ -6,11 +6,11 @@ part 'theme_pod.g.dart';
 
 @Riverpod(keepAlive: true)
 class ThemePod extends _$ThemePod {
-  final prefKey = 'app_theme_picker:theme';
+  final _prefKey = 'app_theme_picker:theme';
 
   @override
   Future<FlexScheme> build() async {
-    final themeIndex = await ref.read(PrefsIntPodProvider(prefKey).future);
+    final themeIndex = await ref.read(prefsIntPodProvider(_prefKey).future);
     if (themeIndex != null) {
       return FlexScheme.values[themeIndex];
     }
@@ -18,7 +18,9 @@ class ThemePod extends _$ThemePod {
   }
 
   Future<void> changeTheme(FlexScheme theme) async {
-    await ref.read(PrefsIntPodProvider(prefKey).notifier).setValue(theme.index);
+    await ref
+        .read(prefsIntPodProvider(_prefKey).notifier)
+        .setValue(theme.index);
     state = AsyncData(theme);
   }
 }

@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class ThemeModeButton extends ConsumerWidget {
-  final ThemeMode mode;
-
   const ThemeModeButton({required this.mode, super.key});
+
+  final ThemeMode mode;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

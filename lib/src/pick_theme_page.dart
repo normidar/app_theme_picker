@@ -28,7 +28,7 @@ class PickThemePage extends ConsumerWidget {
         backgroundColor: Theme.of(context).primaryColor.withAlpha(100),
         title: switch (theme) {
           AsyncData(:final value) => Text(
-              '${value.name} ${'app_theme_picker:theme'.tr()}',
+              '${value.name} ${'theme'.tr()}',
             ),
           AsyncLoading() => const Text('loading...'),
           AsyncError(:final error, :final stackTrace) => RiverpodErrorView(
