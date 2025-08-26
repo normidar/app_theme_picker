@@ -28,9 +28,9 @@ flutter:
 homepage: https://github.com/normidar/app_theme_picker
 name: app_theme_picker
 topics:
-  - a
-  - b
-  - c
-  - d
-  - e
+  - theme
+  - color
+  - style
+  - picker
+  - easy-localization
 version: 0.0.1
