@@ -2,11 +2,6 @@ import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 
 class ThemeColorButton extends StatelessWidget {
-  final FlexSchemeData schemeData;
-  final void Function() onTap;
-  final bool selected;
-  final double size;
-
   const ThemeColorButton({
     required this.schemeData,
     required this.onTap,
@@ -14,6 +9,14 @@ class ThemeColorButton extends StatelessWidget {
     this.size = 50.0,
     super.key,
   });
+
+  final FlexSchemeData schemeData;
+
+  final void Function() onTap;
+
+  final bool selected;
+
+  final double size;
 
   @override
   Widget build(BuildContext context) {
