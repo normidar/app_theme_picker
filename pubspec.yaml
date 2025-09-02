@@ -12,7 +12,7 @@ description: A Flutter package template.
 dev_dependencies:
   auto_exporter: any
   build_runner: ^2.4.11
-  build_test: ^2.2.2
+  build_test: ">=2.2.2 <4.0.0"
   custom_lint: ^0.7.5
   flutter_test:
     sdk: flutter
