@@ -6,171 +6,93 @@ part of 'light_theme_data.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$lightThemeDataHash() => r'771e7f342be8a9f50121dc138c7865313e1f45a8';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// Copied from Dart SDK
-class _SystemHash {
-  _SystemHash._();
-
-  static int combine(int hash, int value) {
-    // ignore: parameter_assignments
-    hash = 0x1fffffff & (hash + value);
-    // ignore: parameter_assignments
-    hash = 0x1fffffff & (hash + ((0x0007ffff & hash) << 10));
-    return hash ^ (hash >> 6);
-  }
-
-  static int finish(int hash) {
-    // ignore: parameter_assignments
-    hash = 0x1fffffff & (hash + ((0x03ffffff & hash) << 3));
-    // ignore: parameter_assignments
-    hash = hash ^ (hash >> 11);
-    return 0x1fffffff & (hash + ((0x00003fff & hash) << 15));
-  }
-}
-
-abstract class _$LightThemeData
-    extends BuildlessAutoDisposeAsyncNotifier<ThemeData> {
-  late final String? fontFamily;
-
-  FutureOr<ThemeData> build([
-    String? fontFamily,
-  ]);
-}
-
-/// See also [LightThemeData].
 @ProviderFor(LightThemeData)
-const lightThemeDataProvider = LightThemeDataFamily();
+const lightThemeDataProvider = LightThemeDataFamily._();
 
-/// See also [LightThemeData].
-class LightThemeDataFamily extends Family<AsyncValue<ThemeData>> {
-  /// See also [LightThemeData].
-  const LightThemeDataFamily();
-
-  /// See also [LightThemeData].
-  LightThemeDataProvider call([
-    String? fontFamily,
-  ]) {
-    return LightThemeDataProvider(
-      fontFamily,
-    );
-  }
-
-  @override
-  LightThemeDataProvider getProviderOverride(
-    covariant LightThemeDataProvider provider,
-  ) {
-    return call(
-      provider.fontFamily,
-    );
-  }
-
-  static const Iterable<ProviderOrFamily>? _dependencies = null;
-
-  @override
-  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
-
-  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
-
-  @override
-  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
-      _allTransitiveDependencies;
-
-  @override
-  String? get name => r'lightThemeDataProvider';
-}
-
-/// See also [LightThemeData].
-class LightThemeDataProvider
-    extends AutoDisposeAsyncNotifierProviderImpl<LightThemeData, ThemeData> {
-  /// See also [LightThemeData].
-  LightThemeDataProvider([
-    String? fontFamily,
-  ]) : this._internal(
-          () => LightThemeData()..fontFamily = fontFamily,
-          from: lightThemeDataProvider,
+final class LightThemeDataProvider
+    extends $AsyncNotifierProvider<LightThemeData, ThemeData> {
+  const LightThemeDataProvider._(
+      {required LightThemeDataFamily super.from,
+      required String? super.argument})
+      : super(
+          retry: null,
           name: r'lightThemeDataProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$lightThemeDataHash,
-          dependencies: LightThemeDataFamily._dependencies,
-          allTransitiveDependencies:
-              LightThemeDataFamily._allTransitiveDependencies,
-          fontFamily: fontFamily,
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
         );
 
-  LightThemeDataProvider._internal(
-    super._createNotifier, {
-    required super.name,
-    required super.dependencies,
-    required super.allTransitiveDependencies,
-    required super.debugGetCreateSourceHash,
-    required super.from,
-    required this.fontFamily,
-  }) : super.internal();
-
-  final String? fontFamily;
+  @override
+  String debugGetCreateSourceHash() => _$lightThemeDataHash();
 
   @override
-  FutureOr<ThemeData> runNotifierBuild(
-    covariant LightThemeData notifier,
-  ) {
-    return notifier.build(
-      fontFamily,
-    );
+  String toString() {
+    return r'lightThemeDataProvider'
+        ''
+        '($argument)';
   }
 
+  @$internal
   @override
-  Override overrideWith(LightThemeData Function() create) {
-    return ProviderOverride(
-      origin: this,
-      override: LightThemeDataProvider._internal(
-        () => create()..fontFamily = fontFamily,
-        from: from,
-        name: null,
-        dependencies: null,
-        allTransitiveDependencies: null,
-        debugGetCreateSourceHash: null,
-        fontFamily: fontFamily,
-      ),
-    );
-  }
-
-  @override
-  AutoDisposeAsyncNotifierProviderElement<LightThemeData, ThemeData>
-      createElement() {
-    return _LightThemeDataProviderElement(this);
-  }
+  LightThemeData create() => LightThemeData();
 
   @override
   bool operator ==(Object other) {
-    return other is LightThemeDataProvider && other.fontFamily == fontFamily;
+    return other is LightThemeDataProvider && other.argument == argument;
   }
 
   @override
   int get hashCode {
-    var hash = _SystemHash.combine(0, runtimeType.hashCode);
-    hash = _SystemHash.combine(hash, fontFamily.hashCode);
-
-    return _SystemHash.finish(hash);
+    return argument.hashCode;
   }
 }
 
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-mixin LightThemeDataRef on AutoDisposeAsyncNotifierProviderRef<ThemeData> {
-  /// The parameter `fontFamily` of this provider.
-  String? get fontFamily;
-}
+String _$lightThemeDataHash() => r'771e7f342be8a9f50121dc138c7865313e1f45a8';
 
-class _LightThemeDataProviderElement
-    extends AutoDisposeAsyncNotifierProviderElement<LightThemeData, ThemeData>
-    with LightThemeDataRef {
-  _LightThemeDataProviderElement(super.provider);
+final class LightThemeDataFamily extends $Family
+    with
+        $ClassFamilyOverride<LightThemeData, AsyncValue<ThemeData>, ThemeData,
+            FutureOr<ThemeData>, String?> {
+  const LightThemeDataFamily._()
+      : super(
+          retry: null,
+          name: r'lightThemeDataProvider',
+          dependencies: null,
+          $allTransitiveDependencies: null,
+          isAutoDispose: true,
+        );
+
+  LightThemeDataProvider call([
+    String? fontFamily,
+  ]) =>
+      LightThemeDataProvider._(argument: fontFamily, from: this);
 
   @override
-  String? get fontFamily => (origin as LightThemeDataProvider).fontFamily;
+  String toString() => r'lightThemeDataProvider';
 }
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
+
+abstract class _$LightThemeData extends $AsyncNotifier<ThemeData> {
+  late final _$args = ref.$arg as String?;
+  String? get fontFamily => _$args;
+
+  FutureOr<ThemeData> build([
+    String? fontFamily,
+  ]);
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final created = build(
+      _$args,
+    );
+    final ref = this.ref as $Ref<AsyncValue<ThemeData>, ThemeData>;
+    final element = ref.element as $ClassProviderElement<
+        AnyNotifier<AsyncValue<ThemeData>, ThemeData>,
+        AsyncValue<ThemeData>,
+        Object?,
+        Object?>;
+    element.handleValue(ref, created);
+  }
+}
