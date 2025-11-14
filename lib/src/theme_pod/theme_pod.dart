@@ -10,7 +10,8 @@ class ThemePod extends _$ThemePod {
 
   @override
   Future<FlexScheme> build() async {
-    final themeIndex = await ref.read(prefsIntPodProvider(_prefKey).future);
+    final themeIndex =
+        await ref.read(prefsAliveIntPodProvider(_prefKey).future);
     if (themeIndex != null) {
       return FlexScheme.values[themeIndex];
     }
@@ -19,7 +20,7 @@ class ThemePod extends _$ThemePod {
 
   Future<void> changeTheme(FlexScheme theme) async {
     await ref
-        .read(prefsIntPodProvider(_prefKey).notifier)
+        .read(prefsAliveIntPodProvider(_prefKey).notifier)
         .setValue(theme.index);
     state = AsyncData(theme);
   }

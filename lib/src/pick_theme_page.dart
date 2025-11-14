@@ -36,7 +36,6 @@ class PickThemePage extends ConsumerWidget {
               error: error,
               stackTrace: stackTrace,
             ),
-          _ => const SizedBox.shrink(),
         },
       ),
       body: SizedBox(
@@ -90,7 +89,6 @@ class PickThemePage extends ConsumerWidget {
                     error: error,
                     stackTrace: stackTrace,
                   ),
-                _ => const SizedBox.shrink(),
               },
             ),
           ),
