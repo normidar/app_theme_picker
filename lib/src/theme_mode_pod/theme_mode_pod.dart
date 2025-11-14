@@ -10,7 +10,7 @@ class ThemeModePod extends _$ThemeModePod {
 
   @override
   Future<ThemeMode> build() async {
-    final themeMode = await ref.read(prefsStringPodProvider(_key).future);
+    final themeMode = await ref.read(prefsAliveStringPodProvider(_key).future);
     if (themeMode != null) {
       return ThemeMode.values.firstWhere(
         (element) => element.name == themeMode,
@@ -21,7 +21,7 @@ class ThemeModePod extends _$ThemeModePod {
 
   Future<void> changeThemeMode(ThemeMode themeMode) async {
     await ref
-        .read(prefsStringPodProvider(_key).notifier)
+        .read(prefsAliveStringPodProvider(_key).notifier)
         .setValue(themeMode.name);
     state = AsyncData(themeMode);
   }
