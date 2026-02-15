@@ -354,6 +354,81 @@ void main() {
 }
 ```
 
+### Using Pre-defined Overrides
+
+For convenience, the package provides pre-defined override variables that make testing even easier:
+
+```dart
+import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:app_theme_picker/app_theme_picker.dart';
+
+void main() {
+  testWidgets('Test with pre-defined overrides', (tester) async {
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          // Use pre-defined override variables
+          sakuraThemeOverride,
+          darkThemeOverride,
+        ],
+        child: MyApp(),
+      ),
+    );
+
+    // Your test code here
+  });
+}
+```
+
+### Available Pre-defined Overrides
+
+**Theme Mode Overrides:**
+```dart
+lightThemeOverride  // Sets theme mode to light
+darkThemeOverride   // Sets theme mode to dark
+```
+
+**Theme Overrides:**
+All 69 FlexScheme themes have corresponding override variables following the pattern `{schemeName}ThemeOverride`:
+
+```dart
+// Material Design
+materialThemeOverride
+materialHcThemeOverride
+materialBaselineThemeOverride
+
+// Blue variants
+blueThemeOverride
+indigoThemeOverride
+hippieBlueThemeOverride
+aquaBlueThemeOverride
+brandBlueThemeOverride
+deepBlueThemeOverride
+// ... and more
+
+// Popular themes
+sakuraThemeOverride
+mandyRedThemeOverride
+redThemeOverride
+greenThemeOverride
+goldThemeOverride
+
+// Material 3 colors
+redM3ThemeOverride
+pinkM3ThemeOverride
+blueM3ThemeOverride
+// ... all M3 colors
+
+// Shadcn inspired
+shadBlueThemeOverride
+shadGrayThemeOverride
+shadGreenThemeOverride
+// ... all shad variants
+
+customThemeOverride
+```
+
 ### Complete List of Theme Mocks
 
 <details>
