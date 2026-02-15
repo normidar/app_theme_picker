@@ -33,7 +33,7 @@ final class ThemePodProvider
   ThemePod create() => ThemePod();
 }
 
-String _$themePodHash() => r'6ce850ae6bd98c0aa28eccddd68226ee3c6af710';
+String _$themePodHash() => r'909b65632ef14653f7378f9a3e0cd1fb5fe3540b';
 
 abstract class _$ThemePod extends $AsyncNotifier<FlexScheme> {
   FutureOr<FlexScheme> build();

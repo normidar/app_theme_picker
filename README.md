@@ -246,6 +246,168 @@ void main() async {
 }
 ```
 
+## Testing with Mocks
+
+The package provides mock implementations for testing purposes. These are useful when you need to override theme providers in your tests.
+
+### Available Theme Mocks
+
+All 69 FlexScheme themes have corresponding mock classes:
+
+```dart
+import 'package:app_theme_picker/app_theme_picker.dart';
+
+// Material Design themes
+MaterialThemeMock()
+MaterialHcThemeMock()
+BlueThemeMock()
+IndigoThemeMock()
+
+// Color-based themes
+SakuraThemeMock()
+MandyRedThemeMock()
+RedThemeMock()
+RedWineThemeMock()
+// ... and 60+ more theme mocks
+
+// Custom theme
+CustomThemeMock()
+```
+
+### Available Theme Mode Mocks
+
+```dart
+import 'package:app_theme_picker/app_theme_picker.dart';
+
+// Theme mode mocks
+LightThemeModeMock()  // Returns ThemeMode.light
+DarkThemeModeMock()   // Returns ThemeMode.dark
+```
+
+### Using Mocks in Tests
+
+You can override providers with mocks in your widget tests:
+
+```dart
+import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:app_theme_picker/app_theme_picker.dart';
+
+void main() {
+  testWidgets('Test with sakura theme', (tester) async {
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          // Override theme provider with mock
+          themePodProvider.overrideWith((ref) => SakuraThemeMock()),
+          // Override theme mode provider with mock
+          themeModePodProvider.overrideWith((ref) => DarkThemeModeMock()),
+        ],
+        child: MyApp(),
+      ),
+    );
+
+    // Your test code here
+  });
+}
+```
+
+### Example: Testing Different Theme Combinations
+
+```dart
+import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:app_theme_picker/app_theme_picker.dart';
+
+void main() {
+  group('Theme Tests', () {
+    testWidgets('Test with Material theme in light mode', (tester) async {
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            themePodProvider.overrideWith((ref) => MaterialThemeMock()),
+            themeModePodProvider.overrideWith((ref) => LightThemeModeMock()),
+          ],
+          child: MyApp(),
+        ),
+      );
+      
+      // Verify light theme is applied
+      // Your assertions here
+    });
+
+    testWidgets('Test with Sakura theme in dark mode', (tester) async {
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            themePodProvider.overrideWith((ref) => SakuraThemeMock()),
+            themeModePodProvider.overrideWith((ref) => DarkThemeModeMock()),
+          ],
+          child: MyApp(),
+        ),
+      );
+      
+      // Verify dark theme is applied
+      // Your assertions here
+    });
+  });
+}
+```
+
+### Complete List of Theme Mocks
+
+<details>
+<summary>Click to expand all 69 theme mocks</summary>
+
+**Material Design Themes:**
+- `MaterialThemeMock` - Material Design guide example
+- `MaterialHcThemeMock` - Material high contrast
+- `MaterialBaselineThemeMock` - Material 3 baseline
+
+**Blue Themes:**
+- `BlueThemeMock`, `IndigoThemeMock`, `HippieBlueThemeMock`, `AquaBlueThemeMock`
+- `BrandBlueThemeMock`, `DeepBlueThemeMock`, `BahamaBlueThemeMock`, `SanJuanBlueThemeMock`
+- `BlumineBlueThemeMock`, `BlueWhaleThemeMock`, `EbonyClayThemeMock`, `BigStoneThemeMock`
+
+**Red/Pink Themes:**
+- `SakuraThemeMock`, `MandyRedThemeMock`, `RedThemeMock`, `RedWineThemeMock`
+- `BarossaThemeMock`, `DamaskThemeMock`, `RosewoodThemeMock`
+
+**Purple/Brown Themes:**
+- `PurpleBrownThemeMock`, `DeepPurpleThemeMock`
+
+**Green Themes:**
+- `GreenThemeMock`, `MoneyThemeMock`, `JungleThemeMock`, `MallardGreenThemeMock`
+- `VerdunHemlockThemeMock`, `DellGenoaThemeMock`
+
+**Yellow/Gold/Orange Themes:**
+- `GoldThemeMock`, `MangoThemeMock`, `AmberThemeMock`, `VesuviusBurnThemeMock`
+
+**Grey/Neutral Themes:**
+- `GreyLawThemeMock`, `WasabiThemeMock`, `SharkThemeMock`, `EspressoThemeMock`
+- `OuterSpaceThemeMock`
+
+**Special Themes:**
+- `FlutterDashThemeMock` - Based on Flutter Dash mascot
+
+**Material 3 Color Themes:**
+- `RedM3ThemeMock`, `PinkM3ThemeMock`, `PurpleM3ThemeMock`, `IndigoM3ThemeMock`
+- `BlueM3ThemeMock`, `CyanM3ThemeMock`, `TealM3ThemeMock`, `GreenM3ThemeMock`
+- `LimeM3ThemeMock`, `YellowM3ThemeMock`, `OrangeM3ThemeMock`, `DeepOrangeM3ThemeMock`
+
+**Monochrome Themes:**
+- `BlackWhiteThemeMock`, `GreysThemeMock`, `SepiaThemeMock`
+
+**Shadcn Inspired Themes:**
+- `ShadBlueThemeMock`, `ShadGrayThemeMock`, `ShadGreenThemeMock`, `ShadNeutralThemeMock`
+- `ShadOrangeThemeMock`, `ShadRedThemeMock`, `ShadRoseThemeMock`, `ShadSlateThemeMock`
+- `ShadStoneThemeMock`, `ShadVioletThemeMock`, `ShadYellowThemeMock`, `ShadZincThemeMock`
+
+**Custom:**
+- `CustomThemeMock` - Placeholder for custom themes
+
+</details>
+
 ## API Reference
 
 ### PickThemePage

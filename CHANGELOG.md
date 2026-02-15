@@ -1,3 +1,11 @@
+## 0.1.2
+
+- Add mocks for theme and theme mode.
+
+## 0.1.1
+
+- Add theme mode pod.
+
 ## 0.1.0
 
 - update riverpod.
