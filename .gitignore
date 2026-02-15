@@ -30,3 +30,5 @@ doc/api/
 
 # FVM Version Cache
 .fvm/
+
+.DS_Store
