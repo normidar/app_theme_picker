@@ -1,3 +1,7 @@
+## 0.1.3
+
+- Add overrides for theme and theme mode.
+
 ## 0.1.2
 
 - Add mocks for theme and theme mode.

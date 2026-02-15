@@ -12,3 +12,4 @@ analyzer:
     use_setters_to_change_properties: ignore
     flutter_style_todos: ignore
     invalid_annotation_target: ignore
+    specify_nonobvious_property_types: ignore

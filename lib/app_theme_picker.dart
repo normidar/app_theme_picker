@@ -1,6 +1,7 @@
 export 'package:app_theme_picker/src/dark_theme_data/dark_theme_data.dart';
 export 'package:app_theme_picker/src/light_theme_data/light_theme_data.dart';
 export 'package:app_theme_picker/src/mocks/brightness_theme_mocks.dart';
+export 'package:app_theme_picker/src/mocks/overrides.dart';
 export 'package:app_theme_picker/src/mocks/theme_mocks.dart';
 export 'package:app_theme_picker/src/package_name.dart';
 export 'package:app_theme_picker/src/pick_theme_page.dart';
