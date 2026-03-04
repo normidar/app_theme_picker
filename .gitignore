@@ -32,3 +32,4 @@ doc/api/
 .fvm/
 
 .DS_Store
+custom_lint.log
